@@ -1523,21 +1523,25 @@ msg += "P.S. CSS can not create clickable links."
     }
 
     // Sidebar.
-    #side {
+    #pane-side {
         /// Feat -> Blur contacts.
         if (chat_b_c) {
-            [style *= '0s; height'] {
-                /// Remove odd shadow.
-                > [aria-selected = 'true'] {
-                    > div::after { display: none i }
-                }
+            div > div {
+                [aria-label="Chat list"] {
+                    > div > div {
+                        /// Remove odd shadow.
+                        > [aria-selected = 'true'] {
+                            > div::after { display: none i }
+                        }
 
-                /// Do the blur.
-                > :not([aria-selected = 'true']) {
-                    overflow: hidden i
-                    > div { transition: background, filter 300ms ease-in-out i }
-                    &:not(:hover) > div { filter: blur(6px) }
-                    &:hover { filter: blur(0px) }
+                        /// Do the blur.
+                        > :not([aria-selected = 'true']) {
+                            overflow: hidden i
+                            > div { transition: background, filter 300ms ease-in-out i }
+                            &:not(:hover) > div { filter: blur(6px) }
+                            &:hover { filter: blur(0px) }
+                        }
+                    }
                 }
             }
         }

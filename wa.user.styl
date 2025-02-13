@@ -90,6 +90,7 @@
 
 @var checkbox chat_h_p_p 'Hide profile pictures' 0
 @var checkbox chat_b_c   'Blurred contacts' 0
+@var range    chat_b_c_i 'Blurred intensity' [6, 2, 15, 1, "px"]
 @var checkbox chat_b_img 'Blurred media' 0
 @var text     chat_b_in  'Blurred media hover-on delay' 0.4s
 @var text     chat_b_out 'Blurred media hover-off delay' 0.2s
@@ -1538,7 +1539,7 @@ msg += "P.S. CSS can not create clickable links."
                         > :not([aria-selected = 'true']) {
                             overflow: hidden i
                             > div { transition: background, filter 300ms ease-in-out i }
-                            &:not(:hover) > div { filter: blur(6px) }
+                            &:not(:hover) > div { filter: blur(chat_b_c_i) }
                             &:hover { filter: blur(0px) }
                         }
                     }
